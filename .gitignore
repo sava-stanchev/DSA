@@ -1,0 +1,17 @@
+# Ignore Visual Studio local settings
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore all VSCode settings
+.vscode/
+
+# Build artifacts
+*.exe
+*.out
+*.o
+
+# Other (optional)
+*.log
