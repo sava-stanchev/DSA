@@ -13,7 +13,7 @@ using namespace std;
 class Solution
 {
 public:
-    bool hasDuplicate(vector<int> &nums)
+    bool containsDuplicate(vector<int> &nums)
     {
         unordered_set<int> seen;
         for (int num : nums)
@@ -27,3 +27,4 @@ public:
         return false;
     }
 };
+;
