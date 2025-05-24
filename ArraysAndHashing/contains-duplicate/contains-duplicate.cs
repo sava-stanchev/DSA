@@ -3,6 +3,7 @@ public class Solution
     public bool ContainsDuplicate(int[] nums)
     {
         HashSet<int> seen = new HashSet<int>();
+
         foreach (int num in nums)
         {
             if (seen.Contains(num))
@@ -11,6 +12,7 @@ public class Solution
             }
             seen.Add(num);
         }
+
         return false;
     }
 }
