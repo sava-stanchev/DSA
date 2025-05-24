@@ -6,13 +6,16 @@ public class Solution
 
         for (int i = 0; i < nums.Length; i++)
         {
-            var diff = target - nums[i];
+            int diff = target - nums[i];
+
             if (prevMap.ContainsKey(diff))
             {
                 return new int[] { prevMap[diff], i };
             }
+
             prevMap[nums[i]] = i;
         }
+
         return null;
     }
 }
