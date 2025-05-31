@@ -15,10 +15,12 @@ var topKFrequent = function (nums, k) {
         bucket[freq].push(num);
     }
 
-    const result = [];
+    const res = [];
 
     for (let i = bucket.length - 1; i >= 0; i--) {
-        if (bucket[i]) result.push(...bucket[i]);
-        if (result.length === k) return result;
+        for (let n of bucket[i]) {
+            res.push(n);
+            if (res.length === k) return res;
+        }
     }
 };
