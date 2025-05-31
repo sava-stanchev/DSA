@@ -3,21 +3,21 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-  let map = new Map();
+    const res = new Map();
 
-  for (const str of strs) {
-    const frequency = new Array(26).fill(0);
+    for (let s of strs) {
+        const count = new Array(26).fill(0);
 
-    for (const char of str) {
-      const charCode = char.charCodeAt(0) - "a".charCodeAt(0);
-      frequency[charCode]++;
+        for (let c of s) {
+            count[c.charCodeAt(0) - "a".charCodeAt(0)]++;
+        }
+
+        const key = count.join(",");
+        const values = res.get(key) || [];
+
+        values.push(s);
+        res.set(key, values);
     }
 
-    let keyStr = frequency.toString();
-    const values = map.get(keyStr) || [];
-    values.push(str);
-    map.set(keyStr, values);
-  }
-
-  return [...map.values()];
+    return [...res.values()];
 };
