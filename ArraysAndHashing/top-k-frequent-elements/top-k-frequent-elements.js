@@ -12,7 +12,6 @@ var topKFrequent = function (nums, k) {
     }
 
     for (let [num, freq] of count) {
-        if (!bucket[freq]) bucket[freq] = [];
         bucket[freq].push(num);
     }
 
