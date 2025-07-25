@@ -51,18 +51,18 @@ int main()
     Display(arr);
     printf("\nMissing elements are\n");
 
-    int h = Max(arr);
-    int l = Min(arr);
-    int *count = malloc((h + 1) * sizeof(int));
+    int max = Max(arr);
+    int min = Min(arr);
+    int *count = malloc((max + 1) * sizeof(int));
     int i;
 
-    for (i = 0; i <= h; i++)
+    for (i = 0; i <= max; i++)
         count[i] = 0;
 
     for (i = 0; i < arr.length; i++)
         count[arr.A[i]]++;
 
-    for (i = l; i <= h; i++)
+    for (i = min; i <= max; i++)
         if (count[i] == 0)
             printf("%d\n", i);
 
