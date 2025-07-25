@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Array
 {
@@ -15,27 +16,56 @@ void Display(struct Array arr)
         printf("%d ", arr.A[i]);
 }
 
+int Max(struct Array arr)
+{
+    int max = arr.A[0];
+    int i;
+
+    for (i = 1; i < arr.length; i++)
+    {
+        if (arr.A[i] > max)
+            max = arr.A[i];
+    }
+
+    return max;
+}
+
+int Min(struct Array arr)
+{
+    int min = arr.A[0];
+    int i;
+
+    for (i = 1; i < arr.length; i++)
+    {
+        if (arr.A[i] < min)
+            min = arr.A[i];
+    }
+
+    return min;
+}
+
 int main()
 {
-    struct Array arr = {{6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19}, 15, 11};
+    struct Array arr = {{3, 7, 4, 9, 12, 6, 1, 11, 2, 10}, 15, 10};
 
     Display(arr);
     printf("\nMissing elements are\n");
 
-    int diff = arr.A[0];
+    int h = Max(arr);
+    int l = Min(arr);
+    int *count = malloc((h + 1) * sizeof(int));
     int i;
 
-    for (i = 0; i < arr.length; i++)
-    {
-        if (arr.A[i] - i != diff)
-        {
-            while (diff < arr.A[i] - i)
-            {
-                printf("%d\n", i + diff);
-                diff++;
-            }
-        }
-    }
+    for (i = 0; i <= h; i++)
+        count[i] = 0;
 
+    for (i = 0; i < arr.length; i++)
+        count[arr.A[i]]++;
+
+    for (i = l; i <= h; i++)
+        if (count[i] == 0)
+            printf("%d\n", i);
+
+    free(count);
     return 0;
 }
