@@ -16,42 +16,14 @@ void Display(struct Array arr)
         printf("%d ", arr.A[i]);
 }
 
-int Max(struct Array arr)
-{
-    int max = arr.A[0];
-    int i;
-
-    for (i = 1; i < arr.length; i++)
-    {
-        if (arr.A[i] > max)
-            max = arr.A[i];
-    }
-
-    return max;
-}
-
-int Min(struct Array arr)
-{
-    int min = arr.A[0];
-    int i;
-
-    for (i = 1; i < arr.length; i++)
-    {
-        if (arr.A[i] < min)
-            min = arr.A[i];
-    }
-
-    return min;
-}
-
 int main()
 {
     struct Array arr = {{3, 6, 8, 8, 10, 12, 15, 15, 15, 20}, 15, 10};
 
     Display(arr);
 
-    int max = Max(arr);
-    int min = Min(arr);
+    int max = arr.A[arr.length - 1];
+    int min = arr.A[0];
     int *count = malloc((max + 1) * sizeof(int));
     int i;
 
