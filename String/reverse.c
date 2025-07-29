@@ -9,6 +9,14 @@ int strLength(char *s)
     return i;
 }
 
+void swap(char *x, char *y)
+{
+    char temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 int reverseStr(char *s)
 {
     char temp;
@@ -17,9 +25,7 @@ int reverseStr(char *s)
 
     for (i = 0; i < j; i++, j--)
     {
-        temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
+        swap(&s[i], &s[j]);
     }
 
     printf("Reversed string: %s", s);
