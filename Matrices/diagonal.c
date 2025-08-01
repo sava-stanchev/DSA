@@ -23,12 +23,12 @@ int Get(struct Matrix m, int i, int j)
 void Display(struct Matrix m)
 {
     int i, j;
-    for (i = 0; i < m.n; i++)
+    for (i = 1; i <= m.n; i++)
     {
-        for (j = 0; j < m.n; j++)
+        for (j = 1; j <= m.n; j++)
         {
             if (i == j)
-                printf("%d ", m.A[i]);
+                printf("%d ", m.A[i - 1]);
             else
                 printf("0 ");
         }
