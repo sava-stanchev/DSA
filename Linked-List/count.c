@@ -49,7 +49,7 @@ int Rcount(struct Node *p)
 
 int main()
 {
-    int A[] = {3, 5, 7, 10, 15, 8, 12, 20};
+    int A[] = {3, 5, 7, 10, 15};
     create(A, 5);
 
     printf("Length is %d\n", count(first));
