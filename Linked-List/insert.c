@@ -76,7 +76,6 @@ void Insert(struct Node *p, int index, int x)
 
 int main()
 {
-    struct Node *temp;
     int A[] = {3, 5, 7};
     create(A, 3);
 
