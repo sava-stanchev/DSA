@@ -101,6 +101,8 @@ int main()
     else
         printf("Stack is not full\n");
 
+    printf("Top element: %d\n", stackTop(st));
+
     Display(st);
 
     return 0;
