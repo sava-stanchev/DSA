@@ -73,8 +73,8 @@ struct Node *RInsert(struct Node *p, int key)
 int main()
 {
     root = RInsert(root, 10);
-    root = RInsert(root, 5);
-    root = RInsert(root, 2);
+    RInsert(root, 5);
+    RInsert(root, 2);
 
     printf("The root node is: %d\n", root->data);
 
